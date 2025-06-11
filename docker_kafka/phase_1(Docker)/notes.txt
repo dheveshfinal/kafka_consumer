@@ -1,0 +1,12 @@
+docker: mean it create an package for the project and use container to run the app, the benefit is it provide free memory and can run anywhere in the system
+
+docker file: it is the list that contain all the dependency of the project like what library that need to download and how to run the app(cmd ["python","app.py"]) and which python version 
+that we are using(FROM python:3.12.4)
+
+docker image: it is one which follow the dockerfile instruction and store all the code, library, version in it
+creating(docker build -t image_name)
+
+docker container: it is the one used for actual running of the application using docker image cmd(docker run -name container_name docker_name),it is reated when we run the command 
+
+docker volume: mean it stores the data outside the container and don't get deleted even if the container stop running
+---------------------------thankyou---------------------------

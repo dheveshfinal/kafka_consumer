@@ -1,0 +1,40 @@
+-Apache Kafka is a tool that lets different apps send messages to each other reliably and quickly — like a real-time message hub.
+
+-Kafka in Action
+Kafka is used as a message hub between them:
+
+User places an order ➡️
+The User App sends a message: "Order #123 placed"
+This message goes to Kafka.
+
+Kafka stores the message 📨
+Like a mailbox, Kafka keeps this message safe.
+
+Restaurant App reads the message from Kafka 🍔
+It sees: "Order #123 placed" and starts preparing the food.
+
+Delivery App reads another message from Kafka 🛵
+Later, it sees: "Order #123 ready for delivery".
+
+Tracking App shows updates from Kafka 🗺️
+It shows: "Order picked up", "Order on the way", etc.
+
+
+-Term	Simple Meaning	Example
+Producer: Sends messages to Kafka.
+Consumer: Reads messages from Kafka
+Topic:	Named channel(folder) for messages storing 
+Broker:	Kafka server handling messages like storing message in topic and receive
+Zookeeper: Manages Kafka brokers (like a boss)	Helps Kafka stay organized
+
+-to start kafka : docker-compose up -d
+
+-json format
+consumer: value_deserializer=lambda v:json.loads(v.decode('utf-8'))
+
+producer: value_serializer=lambda v: json.dumps(v).encode('utf-8')
+
+
+-(producer1,consumre1,consumer2)
+-(producer_json, consumer_json_logger)
+-(producer_json,consmer_db_logger,dashbord.py) so for this the producer sends the message,stored in the topic and recived by consumer and it will store in the database,and streamlit is used to display the message 
